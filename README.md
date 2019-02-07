@@ -44,18 +44,18 @@
  * 'clean -Dbrowser=chromeHeadless test'
  * 'clean -Dbrowser=firefoxHeadless test'
 
-#### With IDE (JUnit):
+### With IDE (JUnit):
 * run CucumberRunner class
 * or run .feature file / directory with .feature files / scenario in .feature file
 
-#### Reports
+### Reports
 Reports are placed in 'target' directory.
 To run report in browser, open 'target\html\index.html' file and choose browser.
 
-#### Gradle tests reports
+### Gradle tests reports
 Reports are placed in 'build' directory.
 To run report in browser, open 'build/reports/tests/runTests/index.html' file and choose browser.
 
-#### Gradle custom tasks
+### Gradle custom tasks
 * runTests
 * deleteCucumberReports

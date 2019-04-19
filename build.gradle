@@ -16,24 +16,14 @@ task upgradeGradle(type: Wrapper) {
     distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-bin.zip"
 }
 
-/**
- * to run cucumber tests with chosen browser, type 'clean -Dbrowser=chrome test'
- */
-//test {
-//    systemProperty "browser", System.getProperty("browser")
-//}
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
-    testCompile group: 'io.cucumber', name: 'cucumber-java8', version: '4.2.0'
+    testCompile group: 'io.cucumber', name: 'cucumber-java', version: '4.2.0'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '4.2.0'
     testCompile group: 'io.cucumber', name: 'cucumber-picocontainer', version: '4.2.0'
 
     testCompile group: 'com.codeborne', name: 'selenide', version: '5.1.0'
-
-    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
-    testCompile group: 'log4j', name: 'log4j', version: '1.2.17'
 }
 
 task deleteCucumberReports(type: Delete) {
@@ -59,7 +49,6 @@ task deleteCucumberReports(type: Delete) {
  * 'clean -Dbrowser=firefoxHeadless test'
  */
 task runTests (type: Test){
-    dependsOn(clean)
     dependsOn(deleteCucumberReports)
     systemProperty "browser", System.getProperty("browser")
 }
